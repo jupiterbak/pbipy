@@ -97,7 +97,7 @@ setup(
     long_description_content_type="text/markdown",
     author=about["__author__"],
     author_email=about["__author_email__"],
-    python_requires=">=3.10",
+    python_requires=">=3.8",
     url=about["__url__"],
     packages=find_packages(
         exclude=[
