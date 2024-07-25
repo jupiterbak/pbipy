@@ -13,8 +13,8 @@ from setuptools.command.test import test as TestCommand
 
 
 requires = [
-    "python-dateutil==2.8.2",
-    "requests>=2.28.1",
+    "python-dateutil",
+    "requests",
 ]
 
 extras = {"dev":["black"]}
@@ -118,7 +118,7 @@ setup(
         "License :: OSI Approved :: Apache Software License",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: Implementation :: CPython",
         "Programming Language :: Python :: Implementation :: PyPy",
         "Intended Audience :: System Administrators",
