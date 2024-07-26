@@ -179,16 +179,24 @@ class Report(Resource):
 
         resource = self.base_path + "/Export"
         request = Request(resource, headers=self.session.headers)
-        with (
-            urlopen(request) as response,
-            gzip.GzipFile(fileobj=response, mode="rb") as uncompressed,
-            open(file_path, "wb") as out_file,
-        ):
-            while True:
-                chunk = uncompressed.read(1024 * 1024)
-                if not chunk:
-                    break
-                out_file.write(chunk)
+        with urlopen(request) as response:
+            with gzip.GzipFile(fileobj=response, mode="rb") as uncompressed:
+                with open(file_path, "wb") as out_file:
+                    while True:
+                        chunk = uncompressed.read(1024 * 1024)
+                        if not chunk:
+                            break
+                        out_file.write(chunk)
+        # with (
+        #     urlopen(request) as response,
+        #     gzip.GzipFile(fileobj=response, mode="rb") as uncompressed,
+        #     open(file_path, "wb") as out_file
+        # ):
+        #     while True:
+        #         chunk = uncompressed.read(1024 * 1024)
+        #         if not chunk:
+        #             break
+        #         out_file.write(chunk)
 
     def download_export(
         self,
@@ -268,7 +276,7 @@ class Report(Resource):
         self,
         id: str,
         include_retry_after: bool = False,
-    ) -> dict | tuple[dict, int]:
+    ) -> "dict | tuple[dict, int]":
         """
         Returns the current status of the provided export request.
 
@@ -541,7 +549,7 @@ class Report(Resource):
 
     def update_datasources(
         self,
-        details: dict | list[dict],
+        details: "dict | list[dict]",
     ) -> None:
         """
         Updates the data sources of the report with supplied update details.
