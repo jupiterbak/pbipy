@@ -50,7 +50,7 @@ class Gateway(Resource):
 
     def datasources(
         self,
-    ) -> list[dict]:
+    ) -> "list[dict]":
         resource = self.base_path + "/datasources"
         raw = _utils.get_raw(
             resource,
@@ -194,7 +194,7 @@ class Gateway(Resource):
     def datasource_users(
         self,
         datasource: str,
-    ) -> list[dict]:
+    ) -> "list[dict]":
         """
         Returns a list of users who have access to the specified data source.
 

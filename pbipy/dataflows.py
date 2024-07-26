@@ -56,7 +56,7 @@ class Dataflow(Resource):
 
     def datasources(
         self,
-    ) -> list[dict]:
+    ) -> 'list[dict]':
         """
         Return a list of Datasources for the Dataflow.
 
@@ -106,7 +106,7 @@ class Dataflow(Resource):
 
     def transactions(
         self,
-    ) -> list[dict]:
+    ) -> "list[dict]":
         """
         Returns a list of transactions for the Dataflow.
 
@@ -178,10 +178,10 @@ class Dataflow(Resource):
     def update_refresh_schedule(
         self,
         notify_option: str = None,
-        days: list[str] = None,
+        days: "list[str]" = None,
         enabled: bool = None,
         local_time_zone_id: str = None,
-        times: list[str] = None,
+        times: "list[str]" = None,
     ) -> None:
         """
         Creates or updates the Refresh Schedule for the Dataflow.
@@ -236,7 +236,7 @@ class Dataflow(Resource):
 
     def upstream_dataflows(
         self,
-    ) -> list[dict]:
+    ) -> "list[dict]":
         """
         Returns a list of upstream dataflows for the Dataflow.
 

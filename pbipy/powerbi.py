@@ -134,7 +134,7 @@ class PowerBI:
 
     def apps(
         self,
-    ) -> list[App]:
+    ) -> "list[App]":
         resource = self.BASE_URL + "/apps"
         raw = _utils.get_raw(
             resource,
@@ -348,7 +348,7 @@ class PowerBI:
     def dataflows(
         self,
         group: str | Group,
-    ) -> list[Dataflow]:
+    ) -> "list[Dataflow]":
         """
         Returns a list of all dataflows from the specified Workspace.
 
@@ -457,7 +457,7 @@ class PowerBI:
     def datasets(
         self,
         group: str = None,
-    ) -> list[Dataset]:
+    ) -> "list[Dataset]":
         """
         Returns a list of datasets from MyWorkspace or the specified group.
 
@@ -579,7 +579,7 @@ class PowerBI:
         filter: str = None,
         skip: int = None,
         top: int = None,
-    ) -> list[Group]:
+    ) -> "list[Group]":
         """
         Returns a list of workspaces the user has access to.
 
@@ -1102,7 +1102,7 @@ class PowerBI:
     def reports(
         self,
         group: str | Group = None,
-    ) -> list[dict]:
+    ) -> "list[dict]":
         """
         Return a list of reports for MyWorkspace or the specified
         group (workspace).

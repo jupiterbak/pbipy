@@ -51,7 +51,7 @@ class Admin:
         start_date_time: datetime,
         end_date_time: datetime,
         filter: str = None,
-    ) -> list[dict]:
+    ) -> 'list[dict]':
         """
         Returns a list of audit Activity Events for the tenant. Activity Events
         are user and admin activities within a Power BI tenant.
@@ -172,7 +172,7 @@ class Admin:
 
     def encryption_keys(
         self,
-    ) -> list[dict]:
+    ) -> "list[dict]":
         """
         Returns the Encryption Keys for the tenant.
 
@@ -194,7 +194,7 @@ class Admin:
     def apps(
         self,
         top: int = None,
-    ) -> list[App]:
+    ) -> "list[App]":
         """
         Return a list of Apps in the Organization.
 
@@ -234,7 +234,7 @@ class Admin:
     def app_users(
         self,
         app: str | App,
-    ) -> list[dict]:
+    ) -> "list[dict]":
         """
         Returns a list of users that have access to the specified app.
 
@@ -266,7 +266,7 @@ class Admin:
         filter: str = None,
         skip: int = None,
         top: int = None,
-    ) -> list[Dashboard]:
+    ) -> "list[Dashboard]":
         """
         Returns a list of dashboards for the organization or specified Workspace.
 
@@ -326,7 +326,7 @@ class Admin:
     def dashboard_subscriptions(
         self,
         dashboard: str | Dashboard,
-    ) -> list[dict]:
+    ) -> "list[dict]":
         """
         Returns a list of dashboard subscriptions along with subscriber
         details.
@@ -355,7 +355,7 @@ class Admin:
     def dashboard_tiles(
         self,
         dashboard: str | Dashboard,
-    ) -> list[Tile]:
+    ) -> "list[Tile]":
         """
         Returns a list of tiles within the specified dashboard.
 
@@ -393,7 +393,7 @@ class Admin:
     def dashboard_users(
         self,
         dashboard: str | Dashboard,
-    ) -> list[dict]:
+    ) -> "list[dict]":
         """
         Returns a list of users that have access to the specified dashboard.
 
@@ -468,7 +468,7 @@ class Admin:
         filter: str = None,
         skip: int = None,
         top: int = None,
-    ) -> list[Dataflow]:
+    ) -> "list[Dataflow]":
         """
         Returns a list of dataflows for the organization or specified Workspace
         (Group).
@@ -532,7 +532,7 @@ class Admin:
     def dataflow_datasources(
         self,
         dataflow: str | Dataflow,
-    ) -> list[dict]:
+    ) -> "list[dict]":
         """
         Return a list of Datasources for the specified Dataflow.
 
@@ -556,7 +556,7 @@ class Admin:
         self,
         dataflow: str | Dataflow,
         group: str | Group,
-    ) -> list[dict]:
+    ) -> "list[dict]":
         """
         Returns a list of upstream dataflows for the specified Dataflow.
 
@@ -588,7 +588,7 @@ class Admin:
     def dataflow_users(
         self,
         dataflow: str | Dataflow,
-    ) -> list[dict]:
+    ) -> "list[dict]":
         """
         Returns a list of users that have access to the specified Dataflow.
 
@@ -620,7 +620,7 @@ class Admin:
         filter: str = None,
         skip: int = None,
         top: int = None,
-    ) -> list[Dataset]:
+    ) -> "list[Dataset]":
         """
         Returns a list of datasets for the Organization or specified Workspace
         (Group).
@@ -694,7 +694,7 @@ class Admin:
     def dataset_datasources(
         self,
         dataset: str | Dataset,
-    ) -> list[dict]:
+    ) -> "list[dict]":
         """
         Returns a list of data sources for the specified dataset.
 
@@ -722,7 +722,7 @@ class Admin:
     def dataset_users(
         self,
         dataset: str | Dataset,
-    ) -> list[dict]:
+    ) -> "list[dict]":
         """
         Return a list of users that have access to the specified Dataset.
 
@@ -750,7 +750,7 @@ class Admin:
     def datasets_upstream_dataflows(
         self,
         group: str | Group,
-    ) -> list[dict]:
+    ) -> "list[dict]":
         """
         Return a list of upstream dataflows for datasets from the specified
         Workspace (Group).
@@ -821,7 +821,7 @@ class Admin:
         expand: str = None,
         filter: str = None,
         skip: int = None,
-    ) -> list[Group]:
+    ) -> "list[Group]":
         """
         Returns a list of Workspaces (Groups) for the Organization.
 
@@ -877,7 +877,7 @@ class Admin:
     def group_users(
         self,
         group: str | Group,
-    ) -> list[dict]:
+    ) -> "list[dict]":
         """
         Returns a list of users that have access to the specified Workspace (Group).
 
@@ -1102,7 +1102,7 @@ class Admin:
         filter: str = None,
         skip: int = None,
         top: int = None,
-    ) -> list[Report]:
+    ) -> "list[Report]":
         """
         Returns a list of reports for the organization or the specified
         Workspace (Group).
@@ -1165,7 +1165,7 @@ class Admin:
     def report_subscriptions(
         self,
         report: str | Report,
-    ) -> list[dict]:
+    ) -> "list[dict]":
         """
         Returns a list of Report subscriptions along with subscriber details.
         This is a preview API call.
@@ -1195,7 +1195,7 @@ class Admin:
     def report_users(
         self,
         report: str | Report,
-    ) -> list[dict]:
+    ) -> "list[dict]":
         """
         Returns a list of users that have access to the specified report.
 
@@ -1226,7 +1226,7 @@ class Admin:
         exclude_inactive_workspaces: bool = None,
         exclude_personal_workspaces: bool = None,
         modified_since: datetime = None,
-    ) -> list[dict]:
+    ) -> "list[dict]":
         """
         Gets a list of Workspace IDs in the Organization.
 
@@ -1289,7 +1289,7 @@ class Admin:
 
     def initiate_scan(
         self,
-        workspaces: list[str] | str,
+        workspaces: "list[str] | str",
         dataset_expressions: bool = None,
         dataset_schema: bool = None,
         datasource_details: bool = None,

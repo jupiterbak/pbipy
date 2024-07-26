@@ -251,7 +251,7 @@ class Group(Resource):
         self,
         skip: int = None,
         top: int = None,
-    ) -> list[dict]:
+    ) -> "list[dict]":
         """
         Returns a list of users that have access to the workspace.
 

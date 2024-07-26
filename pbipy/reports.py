@@ -128,7 +128,7 @@ class Report(Resource):
 
     def datasources(
         self,
-    ) -> list[dict]:
+    ) -> "list[dict]":
         """
         Return a list of Datasources for the report.
 
@@ -313,7 +313,7 @@ class Report(Resource):
         access_level: str = None,
         allow_save_as: bool = None,
         dataset_id: str = None,
-        identities: list[dict] = None,
+        identities: 'list[dict]' = None,
         lifetime_in_minutes: int = None,
     ) -> EmbedToken:
         """
@@ -411,7 +411,7 @@ class Report(Resource):
 
     def pages(
         self,
-    ) -> list[dict]:
+    ) -> "list[dict]":
         """
         Returns a list of pages within the report.
 

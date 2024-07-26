@@ -87,7 +87,7 @@ class App(Resource):
 
     def dashboards(
         self,
-    ) -> list[Dashboard]:
+    ) -> "list[Dashboard]":
         """
         Returns a list of Dashboards from the App.
 
@@ -153,7 +153,7 @@ class App(Resource):
 
     def reports(
         self,
-    ) -> list[Report]:
+    ) -> "list[Report]":
         """
         Returns a list of reports from the app.
 
@@ -221,7 +221,7 @@ class App(Resource):
     def tiles(
         self,
         dashboard: str,
-    ) -> list[Tile]:
+    ) -> "list[Tile]":
         """
         Returns a list of `Tile` objects within the specified dashboard
         from the App.

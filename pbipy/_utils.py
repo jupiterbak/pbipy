@@ -160,7 +160,7 @@ def to_identifier(
 
 def parse_raw(
     raw: dict,
-) -> dict | list[dict]:
+) -> "dict | list[dict]":
     """
     Parses json from an api response.
 

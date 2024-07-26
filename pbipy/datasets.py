@@ -181,7 +181,7 @@ class Dataset(Resource):
 
     def datasources(
         self,
-    ) -> list[dict]:
+    ) -> "list[dict]":
         """
         Returns a list of datasources for the dataset.
 
@@ -223,7 +223,7 @@ class Dataset(Resource):
 
     def execute_queries(
         self,
-        queries: str | list[str],
+        queries: str | "list[str]",
         impersonated_user_name: str = None,
         include_nulls: bool = None,
     ) -> dict:
@@ -249,7 +249,7 @@ class Dataset(Resource):
 
         Parameters
         ----------
-        `queries` : `str | list[str]`
+        `queries` : `str | "list[str]"`
             Query or list of queries to execute against the dataset.
         `impersonated_user_name` : `str`, optional
             The UPN of a user to be impersonated. If the model is not RLS
@@ -291,7 +291,7 @@ class Dataset(Resource):
 
     def parameters(
         self,
-    ) -> list[dict]:
+    ) -> "list[dict]":
         """
         Return a list of parameters for the dataset.
 
@@ -315,7 +315,7 @@ class Dataset(Resource):
         commit_mode: str = None,
         effective_date: str = None,
         max_parallelism: int = None,
-        objects: list[dict] = None,
+        objects: 'list[dict]' = None,
         retry_count: int = None,
         type: str = None,
     ) -> str:
@@ -435,7 +435,7 @@ class Dataset(Resource):
         commit_mode: str = None,
         effective_date: str = None,
         max_parallelism: int = None,
-        objects: list[dict] = None,
+        objects: 'list[dict]' = None,
         retry_count: int = None,
         type: str = None,
         check_interval: int = 30,
@@ -548,7 +548,7 @@ class Dataset(Resource):
     def refresh_history(
         self,
         top: int = None,
-    ) -> list[dict]:
+    ) -> "list[dict]":
         """
         Returns the refresh history for the dataset.
 
@@ -663,7 +663,7 @@ class Dataset(Resource):
 
     def update_datasources(
         self,
-        update_details: dict | list[dict],
+        update_details: "dict | list[dict]",
     ) -> None:
         """
         Update the data sources of the dataset.
@@ -696,7 +696,7 @@ class Dataset(Resource):
 
     def update_parameters(
         self,
-        update_details: dict | list[dict],
+        update_details: "dict | list[dict]",
     ) -> None:
         """
         Updates the parameters values for the dataset.
@@ -740,11 +740,11 @@ class Dataset(Resource):
         self,
         notify_option: str = None,
         direct_query: bool = False,
-        days: list[str] = None,
+        days: "list[str]" = None,
         enabled: bool = None,
         frequency: int = None,
         local_time_zone_id: str = None,
-        times: list[str] = None,
+        times: "list[str]" = None,
     ) -> None:
         """
         Update the Refresh Schedule or Direct Query Refresh Schedule of the
@@ -858,7 +858,7 @@ class Dataset(Resource):
 
     def users(
         self,
-    ) -> list[dict]:
+    ) -> "list[dict]":
         """
         Returns a list of principals that have access to the dataset.
 
