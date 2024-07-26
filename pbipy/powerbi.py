@@ -777,7 +777,7 @@ class PowerBI:
     def imported_files(
         self,
         group: str | Group = None,
-    ) -> list[Import]:
+    ) -> "list[Import]":
         """
         Return a list of imports (imported files) from MyWorkspace or the specified group
         (workspace).
@@ -1226,7 +1226,7 @@ class PowerBI:
 
     def gateways(
         self,
-    ) -> list[Gateway]:
+    ) -> "list[Gateway]":
         """
         Retrieve a list of Gateways for which the user is an admin.
 
